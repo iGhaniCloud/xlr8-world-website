@@ -1831,3 +1831,33 @@ a { color: inherit; text-decoration: none; }
   width: 34px !important;
   height: 34px !important;
 }
+
+/* ===== FORCE EQUAL BUTTON SIZE ===== */
+.nav__cta,
+.nav__call {
+  height: 44px !important;
+  min-height: 44px !important;
+  max-height: 44px !important;
+  padding: 0 20px !important;
+  font-size: 0.9rem !important;
+  line-height: 44px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  box-sizing: border-box !important;
+}
+.nav__call {
+  padding-left: 6px !important;
+  padding-right: 18px !important;
+  gap: 10px !important;
+}
+.nav__call-icon {
+  width: 32px !important;
+  height: 32px !important;
+  min-width: 32px !important;
+  min-height: 32px !important;
+  flex-shrink: 0 !important;
+}
+.nav__call-icon svg {
+  width: 15px !important;
+  height: 15px !important;
+}
