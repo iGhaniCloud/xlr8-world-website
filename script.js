@@ -250,6 +250,14 @@ document.addEventListener('mousemove', e => {
   });
 });
 
+/* ===== FLOATING CALL BUTTON ===== */
+const callBtn = document.getElementById('callBtn');
+if (callBtn) {
+  window.addEventListener('scroll', () => {
+    callBtn.classList.toggle('visible', window.scrollY > 200);
+  });
+}
+
 /* ===== ACTIVE NAV LINK ON SCROLL ===== */
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav__links a');

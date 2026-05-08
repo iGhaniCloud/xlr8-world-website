@@ -1644,3 +1644,100 @@ a { color: inherit; text-decoration: none; }
   background: rgba(141,198,63,0.12);
   box-shadow: 0 0 16px rgba(141,198,63,0.3);
 }
+
+/* ===== FLOATING CALL BUTTON ===== */
+.call-btn {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 150;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #0e0e14;
+  border: 1.5px solid rgba(141,198,63,0.4);
+  border-radius: 999px;
+  padding: 10px 24px 10px 10px;
+  box-shadow:
+    0 0 0 1px rgba(141,198,63,0.1),
+    0 0 20px rgba(141,198,63,0.25),
+    0 0 40px rgba(141,198,63,0.1),
+    0 8px 32px rgba(0,0,0,0.5);
+  text-decoration: none;
+  transition: all 0.35s cubic-bezier(0.4,0,0.2,1);
+  opacity: 0;
+  transform: translateY(20px) scale(0.95);
+  pointer-events: none;
+  animation: callBtnGlow 3s ease-in-out infinite;
+}
+
+.call-btn.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.call-btn:hover {
+  box-shadow:
+    0 0 0 1px rgba(141,198,63,0.3),
+    0 0 30px rgba(141,198,63,0.45),
+    0 0 60px rgba(141,198,63,0.2),
+    0 12px 40px rgba(0,0,0,0.6);
+  transform: translateY(-3px) scale(1.03);
+  border-color: rgba(141,198,63,0.7);
+}
+
+.call-btn__icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #F7941D, #e07810);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 16px rgba(247,148,29,0.45);
+  animation: iconPulse 2.5s ease-in-out infinite;
+}
+
+.call-btn__number {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+@keyframes callBtnGlow {
+  0%, 100% {
+    box-shadow:
+      0 0 0 1px rgba(141,198,63,0.1),
+      0 0 20px rgba(141,198,63,0.25),
+      0 0 40px rgba(141,198,63,0.1),
+      0 8px 32px rgba(0,0,0,0.5);
+  }
+  50% {
+    box-shadow:
+      0 0 0 1px rgba(141,198,63,0.25),
+      0 0 30px rgba(141,198,63,0.4),
+      0 0 60px rgba(141,198,63,0.15),
+      0 8px 32px rgba(0,0,0,0.5);
+  }
+}
+
+@keyframes iconPulse {
+  0%, 100% { box-shadow: 0 4px 16px rgba(247,148,29,0.45); }
+  50%       { box-shadow: 0 4px 28px rgba(247,148,29,0.7), 0 0 0 6px rgba(247,148,29,0.1); }
+}
+
+@media (max-width: 480px) {
+  .call-btn {
+    bottom: 20px;
+    right: 16px;
+    padding: 8px 18px 8px 8px;
+    gap: 10px;
+  }
+  .call-btn__icon { width: 38px; height: 38px; }
+  .call-btn__number { font-size: 0.9rem; }
+}
