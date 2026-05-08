@@ -1810,3 +1810,24 @@ a { color: inherit; text-decoration: none; }
     box-shadow: 0 0 24px rgba(247,148,29,0.4), 0 0 48px rgba(247,148,29,0.12);
   }
 }
+
+/* ===== MATCH BUTTON SIZES ===== */
+.nav__cta,
+.nav__call {
+  height: 50px !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  font-size: 0.92rem !important;
+}
+.nav__cta {
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+}
+.nav__call {
+  padding-left: 8px !important;
+  padding-right: 20px !important;
+}
+.nav__call-icon {
+  width: 34px !important;
+  height: 34px !important;
+}
